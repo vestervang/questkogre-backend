@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Faker\Generator as Faker;
 
 class UsersTableSeeder extends Seeder
 {
@@ -11,13 +12,15 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\User::class)->create([
+        factory(App\User::class, 1)->create([
             'username' => 'admin',
-            'email' => 'admin@admin.com',
-        ]);
-        
-        factory(\App\User::class, 50)->create()->each(function ($u){
-            //Do additional stuff if needed
+            'email'    => 'admin@admin.com',
+        ])->each(function ($u) {
+            $u->newsArticles()->saveMany(factory(App\NewsArticle::class, rand(0, 50))->create(['user_id' => $u->id]));
+        });
+
+        factory(\App\User::class, 50)->create()->each(function ($u) {
+            $u->newsArticles()->saveMany(factory(App\NewsArticle::class, rand(0, 50))->create(['user_id' => $u->id]));
         });
     }
 }
