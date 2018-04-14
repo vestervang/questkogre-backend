@@ -10,7 +10,8 @@
         "fideloper/proxy": "^4.0",
         "folklore/graphql": "dev-develop",
         "laravel/framework": "5.6.*",
-        "laravel/tinker": "^1.0"
+        "laravel/tinker": "^1.0",
+        "vestervang/rs-api": "1.*.*"
     },
     "require-dev": {
         "filp/whoops": "^2.0",
