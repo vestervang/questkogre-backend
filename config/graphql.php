@@ -127,7 +127,8 @@ return [
         'default' => [
             'query' => [
 	            'users' => 'App\GraphQL\Query\UsersQuery',
-                'news_articles' => 'App\GraphQL\Query\NewsArticlesQuery'
+                'news_articles' => 'App\GraphQL\Query\NewsArticlesQuery',
+                'skills' => 'App\GraphQL\Query\SkillsQuery',
             ],
             'mutation' => [
 
@@ -185,7 +186,8 @@ return [
      */
     'types' => [
 	    'user' => 'App\GraphQL\Type\UserType',
-        'news_article' => 'App\GraphQL\Type\NewsArticleType'
+        'news_article' => 'App\GraphQL\Type\NewsArticleType',
+        'skill' => 'App\GraphQL\Type\SkillType',
     ],
 
     /*
