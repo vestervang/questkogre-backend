@@ -129,6 +129,7 @@ return [
 	            'users' => 'App\GraphQL\Query\UsersQuery',
                 'news_articles' => 'App\GraphQL\Query\NewsArticlesQuery',
                 'skills' => 'App\GraphQL\Query\SkillsQuery',
+                'navigation' => 'App\GraphQL\Query\NavigationItemsQuery',
             ],
             'mutation' => [
 
@@ -188,6 +189,7 @@ return [
 	    'user' => 'App\GraphQL\Type\UserType',
         'news_article' => 'App\GraphQL\Type\NewsArticleType',
         'skill' => 'App\GraphQL\Type\SkillType',
+        'navigation_item' => 'App\GraphQL\Type\NavigationItemType',
     ],
 
     /*
