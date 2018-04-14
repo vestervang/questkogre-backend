@@ -126,7 +126,8 @@ return [
     'schemas' => [
         'default' => [
             'query' => [
-	            'users' => 'App\GraphQL\Query\UsersQuery'
+	            'users' => 'App\GraphQL\Query\UsersQuery',
+                'news_articles' => 'App\GraphQL\Query\NewsArticlesQuery'
             ],
             'mutation' => [
 
@@ -183,7 +184,8 @@ return [
      * ]
      */
     'types' => [
-	    'User' => 'App\GraphQL\Type\UserType'
+	    'user' => 'App\GraphQL\Type\UserType',
+        'news_article' => 'App\GraphQL\Type\NewsArticleType'
     ],
 
     /*
