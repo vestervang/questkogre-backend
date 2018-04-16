@@ -131,6 +131,8 @@ return [
                 'skills' => 'App\GraphQL\Query\SkillsQuery',
                 'navigation' => 'App\GraphQL\Query\NavigationItemsQuery',
                 'circuses' => 'App\GraphQL\Query\CircusesQuery',
+                'username_exists' => 'App\GraphQL\Query\UsernameExistsQuery',
+                'email_exists' => 'App\GraphQL\Query\EmailExistsQuery',
             ],
             'mutation' => [
 
