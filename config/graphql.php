@@ -130,6 +130,7 @@ return [
                 'news_articles' => 'App\GraphQL\Query\NewsArticlesQuery',
                 'skills' => 'App\GraphQL\Query\SkillsQuery',
                 'navigation' => 'App\GraphQL\Query\NavigationItemsQuery',
+                'circuses' => 'App\GraphQL\Query\CircusesQuery',
             ],
             'mutation' => [
 
@@ -190,6 +191,7 @@ return [
         'news_article' => 'App\GraphQL\Type\NewsArticleType',
         'skill' => 'App\GraphQL\Type\SkillType',
         'navigation_item' => 'App\GraphQL\Type\NavigationItemType',
+        'circus' => 'App\GraphQL\Type\CircusType',
     ],
 
     /*
