@@ -59,7 +59,7 @@ return [
      * Any middleware for the 'graphql' route group
      */
     'middleware' => [
-	    \Barryvdh\Cors\HandleCors::class
+	    \Barryvdh\Cors\HandleCors::class,
     ],
 
     /**
@@ -135,7 +135,7 @@ return [
                 'email_exists' => 'App\GraphQL\Query\EmailExistsQuery',
             ],
             'mutation' => [
-
+                'login' => 'App\GraphQL\Mutation\LoginMutation',
             ]
         ]
     ],
