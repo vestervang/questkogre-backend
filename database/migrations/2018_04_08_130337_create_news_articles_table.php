@@ -17,7 +17,7 @@ class CreateNewsArticlesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->string('headline');
-            $table->string('slug')->unique();
+            $table->string('slug')->unique()->index();
             $table->text('article');
             $table->timestamps();
     
