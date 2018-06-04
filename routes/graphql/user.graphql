@@ -5,6 +5,7 @@ type User {
     runescape_name: String
     member: Boolean
     news_articles: [NewsArticle!]! @hasMany(type: "relay", relation: "newsArticles")
+    news_article_comments: [NewsArticleComment!]! @hasMany(type: "relay", relation: "newsArticleComments")
 }
 
 extend type Query {

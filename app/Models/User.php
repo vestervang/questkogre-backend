@@ -59,4 +59,17 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function newsArticles()
+    {
+        return $this->hasMany(NewsArticle::class);
+    }
+
+    public function newsArticleComments()
+    {
+        return $this->hasMany(NewsArticleComment::class);
+    }
 }
