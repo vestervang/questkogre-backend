@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\NewsArticle::class, function (Faker $faker) {
+$factory->define(App\Models\NewsArticle::class, function (Faker $faker) {
     return [
         'user_id'  => 1,
         'headline' => $faker->sentence($nbWords = 4, $variableNbWords = true),

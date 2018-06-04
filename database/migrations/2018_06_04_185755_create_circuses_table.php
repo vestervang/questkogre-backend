@@ -17,7 +17,6 @@ class CreateCircusesTable extends Migration
             $table->increments('id');
             $table->string('location');
             $table->string('image');
-            $table->timestamps();
         });
     }
 

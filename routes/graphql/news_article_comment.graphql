@@ -1,0 +1,11 @@
+type NewsArticleComment {
+    id: ID
+    comment: String
+    author: User @belongsTo
+    news_article: NewsArticle @belongsTo(relation: "newsArticle")
+}
+
+extend type Query {
+    news_article_comment(id: ID @eq): NewsArticleComment @find(model: "App\\Models\\NewsArticleComment")
+    news_article_comments(order_by: String order_dir: String): [NewsArticleComment!]! @paginate(type:"relay", model: "App\\Models\\NewsArticleComment", scopes: ["filter"])
+}

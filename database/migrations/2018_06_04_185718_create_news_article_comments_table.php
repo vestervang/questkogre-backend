@@ -15,13 +15,13 @@ class CreateNewsArticleCommentsTable extends Migration
     {
         Schema::create('news_article_comments', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('news_article_id')->unsigned()->index();
+            $table->unsignedInteger('news_article_id')->index();
+            $table->unsignedInteger('user_id')->index();
             $table->text('comment');
-            $table->integer('user_id')->unsigned()->index();
             $table->timestamps();
-    
+
             $table->foreign('news_article_id')->references('id')->on('news_articles')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

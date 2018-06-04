@@ -1,15 +1,15 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
+use App\Traits\Sortable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-
 class User extends Authenticatable implements JWTSubject
 {
-    use Notifiable;
+    use Notifiable, Sortable;
 
     /**
      * The attributes that are mass assignable.
@@ -32,13 +32,13 @@ class User extends Authenticatable implements JWTSubject
         'remember_token',
     ];
 
-    /**
-     * Get the news articles the user has written.
-     */
-    public function newsArticles()
-    {
-        return $this->hasMany('App\NewsArticle');
-    }
+    protected $sortable = [
+        'id',
+        'username',
+        'email',
+        'runescape_name',
+        'member',
+    ];
 
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
@@ -57,8 +57,6 @@ class User extends Authenticatable implements JWTSubject
      */
     public function getJWTCustomClaims()
     {
-        return [
-            'username' => $this->username,
-        ];
+        return [];
     }
 }

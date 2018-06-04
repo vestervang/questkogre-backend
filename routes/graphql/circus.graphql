@@ -1,0 +1,9 @@
+type Circus {
+    id: Int
+    location: String
+    image: String
+}
+
+extend type Query {
+    circus: Circus @field(resolver: "App\\GraphQL\\Queries\\CircusQuery@current")
+}

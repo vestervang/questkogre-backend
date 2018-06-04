@@ -1,0 +1,14 @@
+type User {
+    id: ID
+    username: String
+    email: String
+    runescape_name: String
+    member: Boolean
+    news_articles: [NewsArticle!]! @hasMany(type: "relay", relation: "newsArticles")
+}
+
+extend type Query {
+    user(id: ID @eq): User @find(model: "App\\Models\\User")
+    users(order_by: String order_dir: String): [User!]! @paginate(type: "relay", model: "App\\Models\\User", scopes: ["filter"])
+    me: User @auth
+}

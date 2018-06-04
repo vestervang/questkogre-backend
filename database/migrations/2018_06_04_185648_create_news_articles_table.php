@@ -15,13 +15,13 @@ class CreateNewsArticlesTable extends Migration
     {
         Schema::create('news_articles', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned()->index();
+            $table->unsignedInteger('user_id')->index();
             $table->string('headline');
             $table->string('slug')->unique()->index();
             $table->text('article');
             $table->timestamps();
-    
-            $table->foreign('user_id')->references('id')->on('users');
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

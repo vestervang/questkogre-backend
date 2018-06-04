@@ -2,7 +2,7 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(App\Circus::class, function (Faker $faker) {
+$factory->define(App\Models\Circus::class, function (Faker $faker) {
 
     $imageDownload = $faker->image(storage_path('app/public/images/activities/circus'), 200, 200);
 
@@ -11,6 +11,6 @@ $factory->define(App\Circus::class, function (Faker $faker) {
 
     return [
         'location' => $faker->city,
-        'image' => 'storage/images/activities/circus/'.$imageName,
+        'image'    => 'storage/images/activities/circus/' . $imageName,
     ];
 });

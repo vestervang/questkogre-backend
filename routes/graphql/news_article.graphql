@@ -1,0 +1,13 @@
+type NewsArticle {
+    id: ID
+    headline: String
+    slug: String
+    article: String
+    author: User @belongsTo
+    comments: [NewsArticleComment!]! @hasMany(type: "relay")
+}
+
+extend type Query {
+    news_article(id: ID @eq): NewsArticle @find(model: "App\\Models\\NewsArticle")
+    news_articles(order_by: String order_dir: String): [NewsArticle!]! @paginate(type:"relay", model: "App\\Models\\NewsArticle", scopes: ["filter"])
+}

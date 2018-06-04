@@ -2,10 +2,9 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(\App\Skill::class, function (Faker $faker) {
-
-    $iconSImage = $faker->image(storage_path('app/public/images/skills'), 222, 125);
-    $iconBImage = $faker->image(storage_path('app/public/images/skills'), 222, 125);
+$factory->define(App\Models\Skill::class, function (Faker $faker) {
+    $iconSImage     = $faker->image(storage_path('app/public/images/skills'), 222, 125);
+    $iconBImage     = $faker->image(storage_path('app/public/images/skills'), 222, 125);
     $thumbnailImage = $faker->image(storage_path('app/public/images/skills'), 222, 125);
 
 
@@ -22,8 +21,8 @@ $factory->define(\App\Skill::class, function (Faker $faker) {
         'name'      => $faker->name,
         'max_level' => $faker->numberBetween(99, 120),
         'member'    => $faker->boolean(),
-        'icon_s'    => 'storage/images/skills/'.$iconSImageName,
-        'icon_b'    => 'storage/images/skills/'.$iconBImageName,
-        'thumbnail' => 'storage/images/skills/'.$thumbnailImageName,
+        'icon_s'    => 'storage/images/skills/' . $iconSImageName,
+        'icon_b'    => 'storage/images/skills/' . $iconBImageName,
+        'thumbnail' => 'storage/images/skills/' . $thumbnailImageName,
     ];
 });

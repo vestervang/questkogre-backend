@@ -1,0 +1,9 @@
+#import ./user.graphql
+#import ./news_article.graphql
+#import ./news_article_comment.graphql
+#import ./auth.graphql
+#import ./circus.graphql
+
+type Query {}
+
+type Mutation {}
